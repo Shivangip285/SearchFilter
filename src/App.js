@@ -1,12 +1,12 @@
 import './App.css';
 import Request from "./Request";
-import ProductFilter from "./ProductFilter";
+import SideMenu from './SideMenu';
 
 function App() {
   return (
     <div className="App">
      {/*<Request/>*/}
-        <ProductFilter/>
+        <SideMenu/>
     </div>
   );
 }

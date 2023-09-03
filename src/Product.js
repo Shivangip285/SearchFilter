@@ -3,18 +3,14 @@ import "./product.css";
 import {data} from "./Data"
 
 const Product=({productData})=> {
-  let[productDetails,setProductDetails]=useState(data);
-  console.log("a",productData);
-  useEffect(()=>{
-    if(productData!==null){
-    setProductDetails(productData)}
-  },[productData])
-   let datas=productData!==null?data:productData;
+   const searchBasedProducts=data.filter(x=>(x.name.indexOf(productData)!==-1));
+   let datas=searchBasedProducts.length!==0?searchBasedProducts:data;
+   console.log("a",productData,datas);
    console.log("abc",data.filter(x=>(x.name.indexOf(productData)!==-1)));
    
  return (
     <div className="products">
-     {data.map(x=> <div className="product">
+     {datas.map(x=> <div className="product">
       <img
           src={`${x.img}`}
           alt=""

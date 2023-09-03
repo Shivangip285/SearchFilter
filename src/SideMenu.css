@@ -1,3 +1,15 @@
+.container{
+    display: flex;
+    padding: 50px;
+}
+
+.leftMenu {
+    flex: 1;
+  }
+
+  .content {
+    flex: 4;
+  }
 .cats{
     display: flex;
     flex-direction: column;
