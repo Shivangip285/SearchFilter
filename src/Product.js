@@ -1,16 +1,18 @@
-import React, {useEffect, useState} from "react"
+import React, {useContext, useEffect, useState} from "react"
 import "./product.css";
 import {data} from "./Data"
-
-const Product=({productData})=> {
-  let[productDetails,setProductDetails]=useState(data);
-  console.log("a",productData);
-  useEffect(()=>{
-    if(productData!==null){
-    setProductDetails(productData)}
-  },[productData])
-   let datas=productData!==null?data:productData;
-   console.log("abc",data.filter(x=>(x.name.indexOf(productData)!==-1)));
+import Context from "./ContextProvider"
+const Product=()=> {
+  let { state, setState, setStatep } = useContext(Context)
+  //const { state, setState} = useContext(Context)
+  //let[productDetails,setProductDetails]=useState(useContext(Context));
+  //console.log("a",state);
+  // useEffect(()=>{
+  //   if(productData!==null){
+  //   setProductDetails(productData)}
+  // },[productData])
+  //  let datas=productData!==null?data:productData;
+   console.log("abc",state);
    
  return (
     <div className="products">
